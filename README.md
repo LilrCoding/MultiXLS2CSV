@@ -3,9 +3,6 @@
 A small tool because Microsoft Excel doesn't support exporting to csv all sheets at once from
 an Excel file.
 
-
-
-
 ## Usage/Examples
 
 ```
@@ -16,11 +13,17 @@ Usage:
   -output string
         Path to the output folder where the CSVs will be saved (default ".")
 ```
-```
+
+```sh
 MultiXLS2CSV.exe accounting.xlsx
 ```
 
-```
+```sh
 MultiXLS2CSV.exe -delimiter ";" -output "csv/accounting" accounting.xlsx
 ```
 
+## Run from source
+
+```sh
+go run main.go -delimiter ";" -output "csv/accounting" accounting.xlsx
+```

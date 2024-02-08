@@ -33,8 +33,17 @@ func writeSheetToCSV(xlsx *excelize.File, sheetName string, delimiter rune, outp
 	csvWriter := csv.NewWriter(outputFile)
 	csvWriter.Comma = delimiter
 
-	// write the rows
+	// get the maximum number of columns in a row
+	maxColumns := 0
 	for _, row := range rows {
+		maxColumns = max(maxColumns, len(row))
+	}
+	
+	for _, row := range rows {
+		// pad the row with empty strings if it has less columns than the maximum
+		for len(row) < maxColumns {
+			row = append(row, "")
+		}
 		if err := csvWriter.Write(row); err != nil {
 			return fmt.Errorf("error writing row to CSV: %v", err)
 		}

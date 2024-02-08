@@ -78,7 +78,6 @@ Usage:
 		os.Exit(1)
 	}
 	delimiter = rune((*csvDelimiter)[0])
-	_ = delimiter
 
 	if err := os.MkdirAll(*outputFolder, 0755); err != nil {
 		fmt.Fprintf(os.Stderr, "Error creating output folder: %v\n", err)

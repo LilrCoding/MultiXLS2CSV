@@ -1,2 +1,26 @@
 # MultiXLS2CSV
-A multi-sheet Excel to CSV converter
+
+A small tool because Microsoft Excel doesn't support exporting to csv all sheets at once from
+an Excel file.
+
+
+
+
+## Usage/Examples
+
+```
+Usage:
+       MultiXLS2CSV.exe [flags] <xlsx-to-be-read>
+  -delimiter string
+        Delimiter to use between fields in the CSV (default ",")
+  -output string
+        Path to the output folder where the CSVs will be saved (default ".")
+```
+```
+MultiXLS2CSV.exe accounting.xlsx
+```
+
+```
+MultiXLS2CSV.exe -delimiter ";" -output "csv/accounting" accounting.xlsx
+```
+
